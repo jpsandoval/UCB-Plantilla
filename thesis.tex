@@ -12,9 +12,12 @@
 \title{\textbf{Titulo del Proyecto para optar al grado de Licenciatura en la Universidad Cat\'olica Boliviana}}
 
 \date{2018}
+\tipo{Proyecto de Grado }
 \carrera{Ingenier\'ia de Sistemas}
 
 \usepackage[utf8]{inputenc}
+% descomentar para español
+%\usepackage[spanish]{babel}
 \usepackage{gensymb}
 \usepackage{fancyhdr}
 \usepackage[toc,page]{appendix}
@@ -24,7 +27,9 @@
 \usepackage{anyfontsize}
 \usepackage[pscoord]{eso-pic}
 \usepackage{listings}
+\usepackage{sectsty}
 \usepackage[numbers,sort]{natbib}
+\usepackage{titlesec}
 \usepackage[nottoc,notlot,notlof]{tocbibind}
 
 
@@ -42,49 +47,71 @@
     }%
 }%
 
+\renewcommand\chaptertitlename{CAP\'ITULO}
+
+\titleformat{\chapter}[hang]
+  {\normalfont\fontsize{12}{12}\selectfont\bfseries}
+  {\MakeUppercase{\chaptertitlename}\ \thechapter:}
+  {.5em}
+  {\MakeUppercase}
+
+\chaptertitlefont{\fontsize{12}{12}\selectfont}
+\sectionfont{\fontsize{12}{12}\selectfont}
+\subsectionfont{\fontsize{12}{12}\selectfont}
+
+
+\setcounter{chapter}{0}
+
 \begin{document}
 
 \frontmatter
 \maketitle
 
-\begin{resumen}
-\lipsum[3-4]
-\end{resumen}
+
+% descomentar para agregar un resumen de tesis
+%\begin{resumen}
+%\lipsum[3-4]
+%\end{resumen}
 
 
+% descomentar para agregar un abstract en ingles
+%\begin{abstract}
+%\lipsum[3-4]
+%\end{abstract}
 
-\begin{abstract}
-\lipsum[3-4]
-\end{abstract}
+% descomentar para agregar dedicatoria
+%\begin{dedicatoria}
+%Dedicado a mis padres...
+%\end{dedicatoria}
 
-\begin{dedicatoria}
-Dedicado a mis padres...
-\end{dedicatoria}
 
-\begin{agradecimientos}
-\lipsum[1-2]
-
-\end{agradecimientos}
+% descomentar para agregar agradecimientos
+%\begin{agradecimientos}
+%\lipsum[1-2]
+%\end{agradecimientos}
 
 \renewcommand*\contentsname{\hfill Indice General \hfill}
 \tableofcontents
 
-\listoftables
-\renewcommand\listtablename{Lista de Tablas}
 
+\renewcommand\listtablename{Lista de Tablas}
+\listoftables
 \renewcommand\listfigurename{Lista de Figuras}
 \listoffigures
 
 \mainmatter
-\input{introduction.tex}
+
+\input{intro.tex}
+\input{capitulo_01.tex}
 \input{conclusion.tex}
 
 \nocite{*}
+\renewcommand\bibname{BIBLIOGRAF\'IA}
 \bibliographystyle{plain}
 \bibliography{\bibtexdb}
 
-\renewcommand\appendixtocname{Apendices}
-\renewcommand\appendixpagename{Apendices}
+\renewcommand\appendixtocname{APENDICES}
+\renewcommand\appendixpagename{APENDICES}
 \begin{appendices}
 \lipsum[1-2]
 \end{appendices}

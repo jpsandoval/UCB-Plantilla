@@ -38,7 +38,7 @@
 
 
 \addto\captionsspanish{\renewcommand\tablename{Tabla}}
-\addto\captionsspanish{\renewcommand\listtablename{Table Index}}
+\addto\captionsspanish{\renewcommand\listtablename{Indice de Tablas}}
 
 
 \RequirePackage{parskip}
@@ -57,8 +57,8 @@
 \newenvironment{dedicatoria}{\clearpage\null\vspace{\stretch{1}}\begin{flushright}\itshape}{\end{flushright}\vspace{\stretch{2}}\null}
 \let\thanks\undefined
 \newenvironment{agradecimientos}{\chapter*{Agradecimientos}}{\vfill\null}
-\newenvironment{intro}{\addcontentsline{toc}{chapter}{\protect\numberline{}Introducci\'on}\chapter*{Introducci\'on}}{\vfill\null}
-\newenvironment{conclusions}{\addcontentsline{toc}{chapter}{\protect\numberline{}Conclusiones}\chapter*{Conclusiones}}{\vfill\null}
+\newenvironment{intro}{\addcontentsline{toc}{chapter}{\protect\numberline{}INTRODUCCI\'ON}\chapter*{INTRODUCCI\'ON}}{\vfill\null}
+\newenvironment{conclusions}{\addcontentsline{toc}{chapter}{\protect\numberline{}CONCLUSIONES}\chapter*{CONCLUSIONES}}{\vfill\null}
 
 
 \renewenvironment{proof}[1][\proofname] {\par\pushQED{\qed}\normalfont\topsep6\p@\@plus6\p@\relax\trivlist\item[\hskip\labelsep\scshape\footnotesize#1\@addpunct{.}]\ignorespaces}{\popQED\endtrivlist\@endpefalse}
@@ -85,13 +85,18 @@
 \newtheorem*{ej}{Example}
 \newtheorem*{obs}{Observation}
 
+
+    
 %% labeles
 \global\let\@carrera\@empty
 \newcommand{\setcarrera}[1]{\def\@carrera{#1}}
 \let\carrera\setcarrera
 \let\setcarrera\relax
 
-
+\global\let\@tipo\@empty
+\newcommand{\settipo}[1]{\def\@tipo{#1}}
+\let\tipo\settipo
+\let\settipo\relax
 
 \global\let\@depto\@empty
 \newcommand{\setdepto}[1]{\def\@depto{#1}}
@@ -108,10 +113,10 @@
 	\begin{titlepage}
 		
 		\begin{minipage}[c]{\textwidth}
-			\centering{\fontsize{18}{18}\selectfont \bfseries{UNIVERSIDAD CAT\'OLICA BOLIVIANA \\ ``SAN PABLO''}} \\
-			\centering{\fontsize{16}{16}\selectfont \bfseries{UNIDAD ACAD\'EMICA REGIONAL COCHABAMBA}} \\
-			\centering{\fontsize{14}{14}\selectfont \bfseries{\@depto}} \\
-			\centering{\fontsize{14}{14}\selectfont \bfseries{Carrera de \@carrera}}
+			\centering{\fontsize{15}{15}\selectfont \bfseries{UNIVERSIDAD CAT\'OLICA BOLIVIANA  ``SAN PABLO''}} \\
+			\centering{\fontsize{14}{14}\selectfont \bfseries{UNIDAD ACAD\'EMICA REGIONAL COCHABAMBA}} \\
+			\centering{\fontsize{13}{13}\selectfont \bfseries{\@depto}} \\
+			\centering{\fontsize{13}{13}\selectfont \bfseries{Carrera de \@carrera}}
 		\end{minipage}
 		\vspace{2cm}
 		\begin{figure}[h]
@@ -126,7 +131,7 @@
 		\centering \@title
 
 		\vspace{1cm}
-		\raggedleft \textit{Proyecto de Licenciatura de \@carrera}
+		\raggedleft \textit{Perfil de \@tipo  de Licenciatura en \@carrera}
 		\\
 		\vspace{2cm}
 			\centering{\fontsize{14}{14}\selectfont \bfseries{\@author}}
