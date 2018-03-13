@@ -8,8 +8,8 @@
 \documentclass[upright, contnum, hidelinks,times]{ucbcba}
 
 \depto{Departamento de Ingenier\'ia y Ciencias Exactas}
-\author{Nombre del Estudiante}
-\title{\textbf{Titulo del Proyecto para optar al grado de Licenciatura en la Universidad Cat\'olica Boliviana}}
+\author{Nombre Estudiante}
+\title{\textbf{Titulo de Tesis}}
 
 \date{2018}
 \tipo{Proyecto de Grado }
@@ -31,6 +31,27 @@
 \usepackage[numbers,sort]{natbib}
 \usepackage{titlesec}
 \usepackage[nottoc,notlot,notlof]{tocbibind}
+\usepackage{xcolor}
+\usepackage[numbers,sort]{natbib}
+\usepackage[nottoc,notlot,notlof]{tocbibind}
+\usepackage{xspace}
+\usepackage{ifthen}
+\usepackage{amsbsy}
+\usepackage{url}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{verbatim}
+\usepackage{balance}
+\usepackage{multirow}
+\usepackage{needspace}
+\usepackage{microtype}
+\usepackage{bold-extra}
+\usepackage{subfigure}
+\usepackage{wrapfig}
+\usepackage{textcomp}
+\usepackage{listings}
+
 
 
 \newcommand{\bibtexdb}{referencias}
@@ -47,20 +68,69 @@
     }%
 }%
 
-\renewcommand\chaptertitlename{CAP\'ITULO}
 
+% Configuración para los títulos de cada capitulo.
+\renewcommand\chaptertitlename{CAP\'ITULO}
 \titleformat{\chapter}[hang]
   {\normalfont\fontsize{12}{12}\selectfont\bfseries}
   {\MakeUppercase{\chaptertitlename}\ \thechapter:}
-  {.5em}
+  {.0em}
   {\MakeUppercase}
+\titlespacing*{\chapter}{0pt}{0pt}{0pt}
 
 \chaptertitlefont{\fontsize{12}{12}\selectfont}
 \sectionfont{\fontsize{12}{12}\selectfont}
 \subsectionfont{\fontsize{12}{12}\selectfont}
 
 
+% graphics: \fig{position}{percentage-width}{filename}{caption}
+\DeclareGraphicsExtensions{.png,.jpg,.pdf,.eps,.gif}
+\graphicspath{{figures2/}}
+\newcommand{\fig}[4]{
+	\begin{figure}[#1]
+		\centering
+		\includegraphics[width=#2\textwidth]{#3}
+		\caption{\label{fig:#3}#4}
+	\end{figure}}
+\newcommand{\largefig}[4]{
+	\begin{figure*}[#1]
+		\centering
+		\includegraphics[width=#2\textwidth]{#3}
+		\caption{\label{fig:#3}#4}
+	\end{figure*}}
+\newcommand{\wrapfig}[5]{	
+\begin{wrapfigure}{#1}{#2\textwidth}
+  \begin{center}
+    \includegraphics[width=#3\textwidth]{#4}
+  \end{center}
+  \caption{\label{fig:#4}#5}
+\end{wrapfigure}}
+% abbreviations
+\newcommand{\ie}{\emph{i.e.,}\xspace}
+\newcommand{\eg}{\emph{e.g.,}\xspace}
+\newcommand{\etc}{\emph{etc.}\xspace}
+\newcommand{\etal}{\emph{et al.}\xspace}
+% lists
+\newenvironment{bullets}[0]
+	{\begin{itemize}}
+	{\end{itemize}}
+\newcommand{\seclabel}[1]{\label{sec:#1}}
+\newcommand{\secref}[1]{Section~\ref{sec:#1}}
+\newcommand{\figlabel}[1]{\label{fig:#1}}
+\newcommand{\figref}[1]{Figura~\ref{fig:#1}}
+\newcommand{\tablabel}[1]{\label{tab:#1}}
+\newcommand{\tabref}[1]{Tabla~\ref{tab:#1}}
+%Specialized macros
+\newcommand{\myparagraph}[1]{\vspace{0.2cm}\noindent\textbf{\textit{#1}.}\xspace}
+
+
+\clubpenalty = 100000
+\widowpenalty = 100000
+\displaywidowpenalty = 100000
+
+
 \setcounter{chapter}{0}
+
 
 \begin{document}
 
@@ -96,14 +166,15 @@
 
 \renewcommand\listtablename{Lista de Tablas}
 \listoftables
+
 \renewcommand\listfigurename{Lista de Figuras}
 \listoffigures
 
 \mainmatter
 
 \input{intro.tex}
-\input{capitulo_01.tex}
-\input{conclusion.tex}
+%\input{capitulo_01.tex}
+%\input{conclusion.tex}
 
 \nocite{*}
 \renewcommand\bibname{BIBLIOGRAF\'IA}
@@ -113,6 +184,6 @@
 \renewcommand\appendixtocname{APENDICES}
 \renewcommand\appendixpagename{APENDICES}
 \begin{appendices}
-\lipsum[1-2]
+mis apendices
 \end{appendices}
 \end{document}

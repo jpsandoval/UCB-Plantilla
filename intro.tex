@@ -1,13 +1,98 @@
 \begin{intro}
 
 
-Este es un ejemplo de citacion \cite{clay_2009}
-\section*{Secci\'on 1}
-\addcontentsline{toc}{section}{\protect\numberline{}Secci\'on 1}%
+Las promesas de collections se crearon para optimizar la composicion de operaciones de colections. Las operaciones se pueden optimizar bajo un conjunto de reglas de inferencia \cite{juampi}.
+
+Este es un ejemplo de citaci\'on \cite{clay_2009}.
+
+\section*{Antecedentes}
+\addcontentsline{toc}{section}{\protect\numberline{}Antecedentes}%
 
 
-\section*{Subsecci\'on 1}
-\addcontentsline{toc}{subsection}{\protect\numberline{}Subsecci\'on 1}%
+
+%para referenciar se pone el path de la imagen
+Ejemplo de como hacer referencia a una imagen \figref{imagenes/UCB-Escudo}
+
+% 0.5 significa que reducira el tamaño de la imagen a la mitad.
+\largefig{h}{0.5}{imagenes/UCB-Escudo}{Ejemplo de Figura}
+
+
+
+
+%se pone el ide de la tabla... el id es definido por el tag \label
+Ejemplo de como hacer referencia a una tabla \ref{categorias}
+
+%EJEMPLO DE TABLA
+
+\begin{table}[t]
+\centering
+\begin{tabular}{llrrrr}
+\hline
+\multicolumn{2}{|l|}{\textbf{Cambios de C\'odigo Fuente}}                                                                                          
+& \multicolumn{1}{r|}{\textbf{R}} 
+& \multicolumn{1}{r|}{\textbf{I}} 
+& \multicolumn{1}{r|}{\textbf{R/I}} 
+& \multicolumn{1}{r|}{\textbf{Total}} \\ \hline
+1	& Method call additions									& 	23 	& 	0  	& 	1	&	24 (29\%)  	\\
+2	& Method call swaps										& 	15	& 	9 	&	0	&	24  (29\%)\\
+ \hline
+ 
+	& {\bf Total}											&	52	&	28	&	4	&	84 (100\%)	 \\
+\end{tabular}
+\caption{Ejemplo de Tabla}
+\label{categorias}
+\end{table}
+
+
+\subsection*{Ejemplo de subsecci\'on}
+
+
+\section*{Problema}
+\addcontentsline{toc}{section}{\protect\numberline{}Antecedentes}%
+
+\subsection*{\emph{Situaci\'on Problematica}}
+\addcontentsline{toc}{subsection}{\protect\numberline{} \emph{Situacion Problematica}}%
+
+
+
+\subsection*{\emph{Formulaci\'on del Problema}}
+\addcontentsline{toc}{subsection}{\protect\numberline{} \emph{Formulaci\'on del Problema}}%
+
+
+
+\section*{Objectivos}
+\addcontentsline{toc}{section}{\protect\numberline{}Objectivos}%
+
+
+
+\subsection*{Objetivo General}
+\addcontentsline{toc}{subsection}{\protect\numberline{}Objetivo General}%
+
+
+\subsection*{Objetivo Espec\'ificos}
+\addcontentsline{toc}{subsection}{\protect\numberline{}Objetivo Espec\'ificos}%
+
+
+\section*{Alcances}
+\addcontentsline{toc}{section}{\protect\numberline{}Alcances}%
+
+
+
+\section*{Limites}
+\addcontentsline{toc}{section}{\protect\numberline{}Limites}%
+
+
+
+
+\section*{Justificaci\'on}
+\addcontentsline{toc}{section}{\protect\numberline{}Justificaci\'on}%
+
+
+\section*{Cronograma}
+\addcontentsline{toc}{section}{\protect\numberline{}Cronograma}%
+
+%\section*{Subsecci\'on 1}
+%\addcontentsline{toc}{subsection}{\protect\numberline{}Subsecci\'on 1}%
 
 
 \end{intro}
