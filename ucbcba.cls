@@ -28,6 +28,7 @@
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{book}}
 \ProcessOptions\relax
 \LoadClass[12pt,oneside]{book}
+\usepackage[utf8]{inputenc}
 
 
 \RequirePackage[top=3cm, left=3.5cm, bottom=3cm, right=3cm, paper=letterpaper]{geometry} %%Margenes
