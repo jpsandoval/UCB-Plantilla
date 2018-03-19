@@ -43,7 +43,7 @@
 
 \RequirePackage{parskip}
 \setlength{\parskip}{1em}
-\setlength{\parindent}{15pt}
+\setlength{\parindent}{0cm}
 
 
 \let\oldenum\enumerate
